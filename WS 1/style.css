@@ -1,0 +1,216 @@
+/* --- Base Variables & Setup --- */
+:root {
+    --primary-color: #ff4757; /* App signature color */
+    --primary-hover: #ff6b81;
+    --text-dark: #2f3542;
+    --bg-light: #f8f9fa;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* This hides anything that spills off the sides */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- Navbar Customizations --- */
+.custom-navbar {
+    padding: 12px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    color: #57606f;
+    margin: 0 8px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* --- Buttons & Inputs --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Custom focus ring for search bar */
+.custom-search input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 71, 87, 0.15);
+}
+/* --- Offers Carousel --- */
+.carousel-img {
+    height: 450px;
+    object-fit: cover;
+    filter: brightness(0.65); /* Darkens the image slightly for text contrast */
+}
+
+/* Center the caption vertically and horizontally */
+.carousel-caption {
+    bottom: 0;
+    top: 0;
+    padding-bottom: 0;
+}
+
+/* Adds a subtle shadow to text to ensure readability on any background */
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* --- Responsive Adjustments --- */
+/* Add this inside your existing @media (max-width: 991.98px) block OR create a new one */
+@media (max-width: 767.98px) {
+    .carousel-img {
+        height: 300px; /* Shorter carousel for mobile screens */
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.8rem; /* Scale down the main heading */
+    }
+    
+    .carousel-caption p {
+        font-size: 1rem; /* Scale down the sub-text */
+    }
+}
+/* --- Menu Cards --- */
+.food-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.food-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Veg/Non-Veg Indicators */
+.veg-indicator, .non-veg-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+/* Smooth transition for when JS hides/shows items */
+.menu-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* --- Responsive Adjustments --- */
+/* Add this inside your existing @media (max-width: 767.98px) block */
+@media (max-width: 767.98px) {
+    .btn-group {
+        width: 100%;
+    }
+    
+    .btn-group .btn {
+        flex: 1; /* Makes the All/Veg/Non-veg buttons stretch evenly on mobile */
+    }
+    
+    #price-sort {
+        width: 100% !important; /* Forces the dropdown to full width on mobile */
+    }
+}
+/* --- Contact Section --- */
+.custom-input:focus {
+    background-color: #fff !important;
+    border: 1px solid var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 71, 87, 0.15);
+}
+
+/* --- Footer --- */
+.footer-link, .footer-icon {
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-link:hover, .footer-icon:hover {
+    opacity: 1 !important;
+    color: var(--primary-color) !important;
+}
+/* --- Modal Triggers --- */
+.food-img, .card-title {
+    cursor: pointer;
+}
+
+.card-title:hover {
+    color: var(--primary-color);
+}
+
+/* --- Restaurant Cards --- */
+.restaurant-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12) !important;
+}
+
+.restaurant-img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Slight zoom effect on the image when hovering over the card */
+.restaurant-card:hover .restaurant-img {
+    transform: scale(1.05);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+    /* Adjust spacing when navbar collapses on tablets/phones */
+    .custom-navbar {
+        padding: 10px 0;
+    }
+    
+    .custom-search {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .cart-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    /* Reposition the cart badge slightly for full-width mobile button */
+    .cart-btn .badge {
+        transform: translate(-50%, -50%);
+        left: auto !important;
+        right: 10px;
+    }
+}

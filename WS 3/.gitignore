@@ -1,0 +1,17 @@
+# Node.js dependencies
+backend/node_modules/
+node_modules/
+
+# Security & Environment variables (for future use)
+.env
+.env.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Editor directories and settings
+.vscode/
+.idea/
+*.swp
